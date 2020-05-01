@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  grafanalib:
+    container_name: grafanalib
+    build: .
+    volumes:
+      - ./work/:/work/
+    tty: true
+    restart: always
