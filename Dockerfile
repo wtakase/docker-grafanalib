@@ -13,7 +13,8 @@ RUN git config --global user.email "wataru.takase@kek.jp" && \
 ENV GRAFANALIB_DIR /usr/local/lib/python3.6/site-packages/grafanalib
 RUN git clone https://github.com/weaveworks/grafanalib.git $GRAFANALIB_DIR
 WORKDIR $GRAFANALIB_DIR
-RUN git checkout 905914b && \
+RUN git fetch && \
+    git checkout 4879379 && \
     git remote add victoriaalee https://github.com/victoriaalee/grafanalib.git && \
     git fetch victoriaalee && \
     git cherry-pick 4f8da5f --strategy-option theirs && \
